@@ -1,0 +1,75 @@
+.dialogMask {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    /*background: rgba(0, 0, 0, 0.3);*/
+    display: none;
+    opacity: 0;
+    transition: all 0.2s ease-out;
+}
+
+.dialogMask.open {
+    display: flex;
+}
+
+.dialogMask.show {
+    opacity: 1;
+}
+
+.dialog {
+    min-width: 300px;
+    max-width:400px;
+    min-height: 200px;
+    background: #fff;
+    transform: scale(0.7);
+    transition: all 0.2s ease-out;
+    /*border-radius: 15px;*/
+    box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+}
+
+.dialogMask.show .dialog {
+    transform: scale(1) translate(0, -30px);
+}
+
+.dialogTitle {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    background: #eee;
+    position: relative;
+    padding: 0 40px;
+    color: #454545;
+}
+
+.dialogContent {
+    padding: 15px;
+    text-align: center;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*background: #ccc;*/
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.3s ease-out;
+    border-radius: 50%;
+}
+
+.closeBtn:hover {
+    background: #ccc;
+    /*transform: scale(1.2);*/
+}

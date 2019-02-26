@@ -30,6 +30,10 @@
     /*border-radius: 15px;*/
     box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.18);
     overflow: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
 }
 
 .dialogMask.show .dialog {
@@ -37,6 +41,7 @@
 }
 
 .dialogTitle {
+    width: 100%;
     height: 40px;
     line-height: 40px;
     text-align: center;
@@ -46,11 +51,47 @@
     position: relative;
     padding: 0 40px;
     color: #454545;
+    flex-shrink: 0;
 }
 
 .dialogContent {
     padding: 15px;
     text-align: center;
+    flex-grow: 1;
+}
+
+.btnBox {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.btnBox button {
+    height: 30px;
+    padding: 0 20px;
+    border: none;
+    margin: 0 10px;
+    font-size: 14px;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btnBox button.ok {
+    background: #abf;
+}
+.btnBox button.ok:hover {
+    background: #aaf;
+}
+
+.btnBox button.cancel {
+    background: #ccc;
+}
+.btnBox button.cancel:hover {
+    background: #bbb;
 }
 
 .closeBtn {

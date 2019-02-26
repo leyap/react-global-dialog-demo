@@ -4,6 +4,14 @@ import Dialog from '../Dialog';
 
 class App extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            show: true
+        }
+    }
+
+
     btnClick() {
         Dialog.show({
             title: 'Current Time',
@@ -11,31 +19,20 @@ class App extends Component {
             bgClose: true,
             onClose: () => {
                 console.log("onClose");
+            },
+            onOk: () => {
+                console.log('onOk');
+            },
+            onCancel: () => {
+                console.log('onCancel');
             }
         });
-    }
-
-    btnClick2() {
-        Dialog.show({
-            title: 'Current Time',
-            content: (new Date()).toLocaleString()
-        });
-
-        let timer = setInterval(() => {
-            Dialog.show({
-                content: (new Date()).toLocaleString(),
-                onClose: () => {
-                    clearInterval(timer);
-                }
-            });
-        }, 1000);
     }
 
     render() {
         return (
             <div className={css.App}>
                 <button onClick={this.btnClick.bind(this)}>Open Dialog</button>
-                <button onClick={this.btnClick2.bind(this)}>Open Dialog With real time</button>
             </div>
         );
     }

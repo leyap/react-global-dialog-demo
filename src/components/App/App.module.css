@@ -1,0 +1,22 @@
+.App {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 10px;
+}
+
+.App button {
+    width: 200px;
+    height: 40px;
+    border: none;
+    margin: 4px;
+    border-radius: 20px;
+    background: #aaa;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.App button:hover {
+    background: #bbb;
+}
